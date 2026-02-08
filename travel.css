@@ -209,43 +209,137 @@
   border-top: 1px solid #cbd5e1;
 }
 
+/* Travel Manager - Mobile Responsive */
+@media (max-width: 900px) {
+  .travel-form .travel-section,
+  .travel-form .card {
+    padding: 1.25rem;
+  }
+}
+
 @media (max-width: 600px) {
-  .travel-form .form-grid {
+  .travel-form .form-grid,
+  .travel-form .form-grid-3 {
     grid-template-columns: 1fr;
   }
 
+  .travel-form .travel-section {
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .travel-form .section-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .travel-form .section-header .btn-add {
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  /* Transport - stacked for mobile */
   .transport-row {
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .transport-row .transport-type { grid-column: 1; grid-row: 1; }
-  .transport-row .transport-desc { grid-column: 2; grid-row: 1; min-width: 0; }
-  .transport-row .transport-amount { grid-column: 1; grid-row: 2; min-width: 0; }
-  .transport-row .transport-paidby { grid-column: 2; grid-row: 2; min-width: 0; }
-  .transport-row .transport-paidat-date { grid-column: 1; grid-row: 3; min-width: 0; }
-  .transport-row .transport-paidat-time { grid-column: 2; grid-row: 3; min-width: 0; }
-  .transport-row .btn-remove { grid-column: 3; grid-row: 1 / -1; }
+  .transport-row .transport-type { grid-column: 1; grid-row: 1; min-width: 0; }
+  .transport-row .transport-desc { grid-column: 1 / -1; grid-row: 2; min-width: 0; }
+  .transport-row .transport-amount { grid-column: 1; grid-row: 3; min-width: 0; }
+  .transport-row .transport-paidby { grid-column: 2; grid-row: 3; min-width: 0; }
+  .transport-row .transport-paidat-date { grid-column: 1; grid-row: 4; min-width: 0; }
+  .transport-row .transport-paidat-time { grid-column: 2; grid-row: 4; min-width: 0; }
+  .transport-row .btn-remove { grid-column: 2; grid-row: 1; align-self: start; }
 
-  .expense-row {
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto auto;
-  }
-  .expense-row .expense-category { grid-column: 1; }
-  .expense-row .expense-desc { grid-column: 2 / 3; min-width: 0; }
-  .expense-row .expense-amount { grid-column: 1; grid-row: 2; min-width: 0; }
-  .expense-row .expense-date { grid-column: 2; grid-row: 2; min-width: 0; }
-  .expense-row .expense-time { grid-column: 1; grid-row: 3; min-width: 0; }
-  .expense-row .expense-paidby { grid-column: 2; grid-row: 3; min-width: 0; }
-  .expense-row .btn-remove { grid-column: 3; grid-row: 1; }
-
+  /* Itinerary - stacked for mobile */
   .itinerary-row {
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .itinerary-row .itinerary-date { grid-column: 1; }
-  .itinerary-row .itinerary-activity { grid-column: 2; }
-  .itinerary-row .itinerary-notes { grid-column: 1 / -1; }
-  .itinerary-row .btn-remove { grid-column: 3; grid-row: 1 / -1; }
+  .itinerary-row .itinerary-date { grid-column: 1; grid-row: 1; min-width: 0; }
+  .itinerary-row .itinerary-activity { grid-column: 1 / -1; grid-row: 2; min-width: 0; }
+  .itinerary-row .itinerary-notes { grid-column: 1 / -1; grid-row: 3; min-width: 0; min-height: 2.5rem; }
+  .itinerary-row .btn-remove { grid-column: 2; grid-row: 1; align-self: start; }
+
+  /* Expenses - stacked for mobile */
+  .expense-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .expense-row .expense-category { grid-column: 1; grid-row: 1; min-width: 0; }
+  .expense-row .expense-desc { grid-column: 1 / -1; grid-row: 2; min-width: 0; }
+  .expense-row .expense-amount { grid-column: 1; grid-row: 3; min-width: 0; }
+  .expense-row .expense-date { grid-column: 2; grid-row: 3; min-width: 0; }
+  .expense-row .expense-time { grid-column: 1; grid-row: 4; min-width: 0; }
+  .expense-row .expense-paidby { grid-column: 2; grid-row: 4; min-width: 0; }
+  .expense-row .btn-remove { grid-column: 2; grid-row: 1; align-self: start; }
+
+  /* Total row - stack on mobile */
+  .travel-form .total-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .travel-form .total-row input {
+    width: 100%;
+  }
+
+  /* Summary - scroll if table overflows */
+  .travel-summary {
+    min-height: 250px;
+    overflow-x: auto;
+  }
+
+  .travel-summary .summary-table {
+    font-size: 0.7rem;
+    min-width: 320px;
+  }
+
+  .travel-summary .summary-table th,
+  .travel-summary .summary-table td {
+    padding: 0.3rem 0.4rem;
+  }
+
+  /* Upload zone - compact on mobile */
+  .upload-card {
+    padding: 1rem;
+  }
+
+  .upload-zone {
+    padding: 1.25rem;
+  }
+
+  /* Actions button full width */
+  .travel-form .actions .btn-primary {
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+  }
+
+  /* Touch-friendly remove buttons */
+  .transport-row .btn-remove,
+  .expense-row .btn-remove,
+  .itinerary-row .btn-remove {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Prevent horizontal overflow */
+  .travel-form .form-row input,
+  .travel-form .form-row select,
+  .travel-form .form-row textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
