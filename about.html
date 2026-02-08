@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Daily Activity Planner</title>
+  <meta name="description" content="Learn about Daily Activity Planner - plan your day, manage travel, track projects. Free tools that work in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+  <div class="background-effects"></div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">📋</span>
+        <span class="brand-text">Daily Planner</span>
+      </a>
+      <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="nav-link">Planner</a></li>
+        <li><a href="travel.html" class="nav-link">Travel Manager</a></li>
+        <li><a href="project.html" class="nav-link">Project Planner</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <header class="page-header">
+      <h1 class="title">About Us</h1>
+      <p class="subtitle">Simple, powerful tools for planning and productivity</p>
+    </header>
+
+    <article class="card content-card">
+      <div class="content-block">
+        <h2>What We Offer</h2>
+        <p>Daily Activity Planner is a collection of free, browser-based tools designed to help you stay organized. No signup, no installation—everything runs directly in your browser. Your data stays on your device.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>Our Tools</h2>
+        <ul class="feature-list">
+          <li>
+            <strong>Daily Activity Planner</strong> — Plan your day with activities, time slots, and notes. Export to PDF or upload and edit existing plans.
+          </li>
+          <li>
+            <strong>Travel Manager</strong> — Track travel expenses, accommodation, transport, itinerary, and generate professional PDF reports.
+          </li>
+          <li>
+            <strong>Project Planner</strong> — Manage project work with task IDs, status tracking, and work done records. Export clean PDF reports.
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h2>Our Values</h2>
+        <div class="value-grid">
+          <div class="value-item">
+            <span class="value-icon">🔒</span>
+            <h3>Privacy First</h3>
+            <p>No data leaves your device unless you choose to download a PDF. No tracking, no accounts.</p>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">⚡</span>
+            <h3>Fast & Simple</h3>
+            <p>Lightweight tools that load quickly and work offline after the first visit.</p>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">📄</span>
+            <h3>PDF Ready</h3>
+            <p>Generate professional PDFs and edit them by re-uploading. Perfect for reports and records.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <p class="cta-text">Ready to get started? <a href="index.html">Try the Daily Planner</a> or explore <a href="travel.html">Travel Manager</a> and <a href="project.html">Project Planner</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="brand-icon">📋</span>
+            <span>Daily Planner</span>
+          </a>
+          <p class="footer-tagline">Plan your day. Export to PDF. Stay productive.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html">Planner</a></li>
+            <li><a href="travel.html">Travel Manager</a></li>
+            <li><a href="project.html">Project Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Daily Activity Planner. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.querySelector('.navbar-toggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      this.setAttribute('aria-expanded', this.classList.contains('open'));
+      document.querySelector('.navbar-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

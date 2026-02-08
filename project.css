@@ -1,0 +1,164 @@
+/* Project Planner - extends base styles */
+
+.project-form .project-section {
+  margin-bottom: 1.5rem;
+}
+
+.project-form .project-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.project-form .form-row {
+  margin-bottom: 1rem;
+}
+
+.project-form .form-row:last-child {
+  margin-bottom: 0;
+}
+
+.project-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-form input,
+.project-form select,
+.project-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.project-form input:focus,
+.project-form select:focus,
+.project-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.project-form .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-form .section-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Task rows */
+.task-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 130px auto;
+  grid-template-rows: auto auto;
+  gap: 0.5rem;
+  align-items: start;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-radius: var(--radius-sm);
+}
+
+.task-row .task-id {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 90px;
+}
+
+.task-row .task-work {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.task-row .task-status {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 120px;
+}
+
+.task-row .task-record {
+  grid-column: 1 / -2;
+  grid-row: 2;
+  resize: vertical;
+  min-height: 2.5rem;
+}
+
+.task-row .btn-remove {
+  grid-column: 4;
+  grid-row: 1 / -1;
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+  padding: 0;
+  align-self: center;
+}
+
+/* Project preview */
+.project-preview {
+  background: #f8fafc;
+  color: #1e293b;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.8125rem;
+  min-height: 300px;
+}
+
+.project-preview .preview-section {
+  margin-bottom: 1rem;
+}
+
+.project-preview .preview-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-preview h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.project-preview .preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.project-preview .preview-table th,
+.project-preview .preview-table td {
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+@media (max-width: 600px) {
+  .task-row {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .task-row .task-id { grid-column: 1; }
+  .task-row .task-work { grid-column: 1 / -1; }
+  .task-row .task-status { grid-column: 1; }
+  .task-row .task-record { grid-column: 1 / -1; }
+  .task-row .btn-remove { grid-column: 3; grid-row: 1; }
+}

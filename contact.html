@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Daily Activity Planner</title>
+  <meta name="description" content="Contact Daily Activity Planner. Get in touch with questions or feedback.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+  <div class="background-effects"></div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">📋</span>
+        <span class="brand-text">Daily Planner</span>
+      </a>
+      <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="nav-link">Planner</a></li>
+        <li><a href="travel.html" class="nav-link">Travel Manager</a></li>
+        <li><a href="project.html" class="nav-link">Project Planner</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <header class="page-header">
+      <h1 class="title">Contact Us</h1>
+      <p class="subtitle">We'd love to hear from you</p>
+    </header>
+
+    <article class="card content-card">
+      <div class="content-block">
+        <p>Have a question, suggestion, or feedback? Reach out using the options below.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>Get in Touch</h2>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:support@example.com">support@example.com</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <span>💬</span>
+            <div>
+              <strong>Feedback</strong>
+              <p>Share your ideas for new features or improvements. We read every message.</p>
+            </div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top: 1rem;">Response time: We aim to reply within 2–3 business days.</p>
+      </div>
+
+      <div class="content-block">
+        <p class="cta-text">Before reaching out, check our <a href="faq.html">FAQ</a> for quick answers.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="brand-icon">📋</span>
+            <span>Daily Planner</span>
+          </a>
+          <p class="footer-tagline">Plan your day. Export to PDF. Stay productive.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html">Planner</a></li>
+            <li><a href="travel.html">Travel Manager</a></li>
+            <li><a href="project.html">Project Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Daily Activity Planner. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.querySelector('.navbar-toggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      this.setAttribute('aria-expanded', this.classList.contains('open'));
+      document.querySelector('.navbar-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

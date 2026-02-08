@@ -1,0 +1,11 @@
+# Netlify config for static deployment
+[build]
+  publish = "."
+  command = ""
+
+# Ensure proper MIME types for static assets
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

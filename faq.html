@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Daily Activity Planner</title>
+  <meta name="description" content="Frequently asked questions about Daily Activity Planner, Travel Manager, and Project Planner.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+  <div class="background-effects"></div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">📋</span>
+        <span class="brand-text">Daily Planner</span>
+      </a>
+      <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="nav-link">Planner</a></li>
+        <li><a href="travel.html" class="nav-link">Travel Manager</a></li>
+        <li><a href="project.html" class="nav-link">Project Planner</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <header class="page-header">
+      <h1 class="title">Frequently Asked Questions</h1>
+      <p class="subtitle">Quick answers to common questions</p>
+    </header>
+
+    <article class="card content-card">
+      <section class="faq-section">
+        <h2>General</h2>
+
+        <details class="faq-item">
+          <summary>Do I need to create an account?</summary>
+          <p>No. All our tools work without signup or login. Just open the page and start planning.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is my data stored somewhere?</summary>
+          <p>No. Your data stays in your browser. We don’t have servers that store your plans, travel details, or project tasks. Only you see your content.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does it work offline?</summary>
+          <p>Yes, after the first load. Your browser caches the page and scripts. You can plan and generate PDFs without an internet connection once everything is loaded.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is it free?</summary>
+          <p>Yes. Daily Activity Planner, Travel Manager, and Project Planner are free to use. There are no premium features or hidden costs.</p>
+        </details>
+      </section>
+
+      <section class="faq-section">
+        <h2>PDF Features</h2>
+
+        <details class="faq-item">
+          <summary>Can I edit a PDF after generating it?</summary>
+          <p>Yes. Upload the PDF you generated (via the upload area on each tool’s page). We extract the content, fill the form, and you can edit and regenerate a new PDF.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will it work with PDFs from other apps?</summary>
+          <p>Upload and edit works best with PDFs created by our tools. They include metadata we use to reconstruct the form. PDFs from other apps may not parse correctly.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What format are the PDFs?</summary>
+          <p>Standard A4 PDFs. You can open them in any PDF reader, print them, or share them. They’re designed to be readable and professional.</p>
+        </details>
+      </section>
+
+      <section class="faq-section">
+        <h2>Tools</h2>
+
+        <details class="faq-item">
+          <summary>What’s the difference between the three tools?</summary>
+          <p><strong>Daily Activity Planner</strong> is for day-to-day schedules (time, activities, notes). <strong>Travel Manager</strong> is for trips (expenses, accommodation, transport, itinerary). <strong>Project Planner</strong> is for projects (tasks, status, work records). Each generates a tailored PDF.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I use this on mobile?</summary>
+          <p>Yes. The site is responsive. Forms and layouts adapt to smaller screens. PDF generation works on supported mobile browsers.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What browsers are supported?</summary>
+          <p>Modern browsers: Chrome, Firefox, Safari, Edge. JavaScript must be enabled. For PDF upload and edit, your browser needs to support the File API and related features.</p>
+        </details>
+      </section>
+
+      <div class="content-block">
+        <p class="cta-text">Still have questions? <a href="contact.html">Contact us</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="brand-icon">📋</span>
+            <span>Daily Planner</span>
+          </a>
+          <p class="footer-tagline">Plan your day. Export to PDF. Stay productive.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html">Planner</a></li>
+            <li><a href="travel.html">Travel Manager</a></li>
+            <li><a href="project.html">Project Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Daily Activity Planner. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.querySelector('.navbar-toggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      this.setAttribute('aria-expanded', this.classList.contains('open'));
+      document.querySelector('.navbar-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

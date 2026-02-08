@@ -1,0 +1,251 @@
+/* Travel Manager - extends base styles */
+
+.travel-form .travel-section {
+  margin-bottom: 1.5rem;
+}
+
+.travel-form .travel-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.travel-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.travel-form .form-grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.travel-form .form-row {
+  margin-bottom: 1rem;
+}
+
+.travel-form .form-row:last-child {
+  margin-bottom: 0;
+}
+
+.travel-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.travel-form input,
+.travel-form select,
+.travel-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.travel-form input:focus,
+.travel-form select:focus,
+.travel-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.travel-form .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.travel-form .section-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Transport / Itinerary / Expense rows - 2-row layout, full width */
+.transport-row,
+.itinerary-row,
+.expense-row {
+  display: grid;
+  gap: 0.75rem;
+  align-items: start;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+}
+
+/* Transport: row1 = type, details | row2 = amount, paid by, paid date, paid time */
+.transport-row {
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.75rem 1rem;
+}
+
+.transport-row .transport-type { grid-column: 1; grid-row: 1; min-width: 0; }
+.transport-row .transport-desc { grid-column: 2 / 5; grid-row: 1; min-width: 0; }
+.transport-row .transport-amount { grid-column: 1; grid-row: 2; min-width: 0; }
+.transport-row .transport-paidby { grid-column: 2; grid-row: 2; min-width: 0; }
+.transport-row .transport-paidat-date { grid-column: 3; grid-row: 2; min-width: 0; }
+.transport-row .transport-paidat-time { grid-column: 4; grid-row: 2; min-width: 0; }
+.transport-row .btn-remove { grid-column: 5; grid-row: 1 / -1; align-self: center; }
+
+/* Itinerary: row1 = date, activity | row2 = notes */
+.itinerary-row {
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: auto auto;
+}
+
+.itinerary-row .itinerary-date { grid-column: 1; grid-row: 1; min-width: 0; }
+.itinerary-row .itinerary-activity { grid-column: 2; grid-row: 1; min-width: 0; }
+.itinerary-row .itinerary-notes { grid-column: 1 / 3; grid-row: 2; resize: vertical; min-height: 2.5rem; min-width: 0; }
+.itinerary-row .btn-remove { grid-column: 3; grid-row: 1 / -1; align-self: center; }
+
+/* Expenses: row1 = category, description | row2 = amount, date, time, paid by - all use full width */
+.expense-row {
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  grid-template-rows: auto auto;
+}
+
+.expense-row .expense-category { grid-column: 1; grid-row: 1; min-width: 0; }
+.expense-row .expense-desc { grid-column: 2 / 5; grid-row: 1; min-width: 0; }
+.expense-row .expense-amount { grid-column: 1; grid-row: 2; min-width: 0; }
+.expense-row .expense-date { grid-column: 2; grid-row: 2; min-width: 0; }
+.expense-row .expense-time { grid-column: 3; grid-row: 2; min-width: 0; }
+.expense-row .expense-paidby { grid-column: 4; grid-row: 2; min-width: 0; }
+.expense-row .btn-remove { grid-column: 5; grid-row: 1 / -1; align-self: center; }
+
+.transport-row .btn-remove,
+.expense-row .btn-remove,
+.itinerary-row .btn-remove {
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.travel-form .total-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.travel-form .total-row span {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.travel-form .total-row input {
+  width: 120px;
+}
+
+/* Travel Summary */
+.travel-summary {
+  background: #f8fafc;
+  color: #1e293b;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.8125rem;
+  min-height: 300px;
+}
+
+.travel-summary .summary-section {
+  margin-bottom: 1rem;
+}
+
+.travel-summary .summary-section:last-child {
+  margin-bottom: 0;
+}
+
+.travel-summary .summary-meta {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.travel-summary h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.travel-summary .summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.travel-summary .summary-table th,
+.travel-summary .summary-table td {
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.travel-summary .summary-total {
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .travel-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transport-row {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .transport-row .transport-type { grid-column: 1; grid-row: 1; }
+  .transport-row .transport-desc { grid-column: 2; grid-row: 1; min-width: 0; }
+  .transport-row .transport-amount { grid-column: 1; grid-row: 2; min-width: 0; }
+  .transport-row .transport-paidby { grid-column: 2; grid-row: 2; min-width: 0; }
+  .transport-row .transport-paidat-date { grid-column: 1; grid-row: 3; min-width: 0; }
+  .transport-row .transport-paidat-time { grid-column: 2; grid-row: 3; min-width: 0; }
+  .transport-row .btn-remove { grid-column: 3; grid-row: 1 / -1; }
+
+  .expense-row {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto auto;
+  }
+  .expense-row .expense-category { grid-column: 1; }
+  .expense-row .expense-desc { grid-column: 2 / 3; min-width: 0; }
+  .expense-row .expense-amount { grid-column: 1; grid-row: 2; min-width: 0; }
+  .expense-row .expense-date { grid-column: 2; grid-row: 2; min-width: 0; }
+  .expense-row .expense-time { grid-column: 1; grid-row: 3; min-width: 0; }
+  .expense-row .expense-paidby { grid-column: 2; grid-row: 3; min-width: 0; }
+  .expense-row .btn-remove { grid-column: 3; grid-row: 1; }
+
+  .itinerary-row {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  .itinerary-row .itinerary-date { grid-column: 1; }
+  .itinerary-row .itinerary-activity { grid-column: 2; }
+  .itinerary-row .itinerary-notes { grid-column: 1 / -1; }
+  .itinerary-row .btn-remove { grid-column: 3; grid-row: 1 / -1; }
+}
