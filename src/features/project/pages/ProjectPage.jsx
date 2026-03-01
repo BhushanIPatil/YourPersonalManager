@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { SprintProjectRow, TodayWorkRow } from '../components'
 import { useProjectPlanner } from '../hooks/useProjectPlanner'
+import { generateSprintPlanningPDF, generateTodayWorkPDF } from '../../../utils/pdfProjectPlanner'
 
 const TABS = [
   { id: 'sprint', label: 'Sprint planning' },
@@ -19,6 +20,20 @@ export function ProjectPage() {
     addTodayItem,
     removeTodayItem,
   } = useProjectPlanner()
+
+  const handleGenerateSprintPDF = useCallback(() => {
+    const ok = generateSprintPlanningPDF(sprintProjects)
+    if (!ok) {
+      alert('Add at least one project with title, sprint, or task to generate PDF.')
+    }
+  }, [sprintProjects])
+
+  const handleGenerateTodayPDF = useCallback(() => {
+    const ok = generateTodayWorkPDF(todayItems)
+    if (!ok) {
+      alert("Add at least one row with project, task, or changes to generate PDF.")
+    }
+  }, [todayItems])
 
   return (
     <>
@@ -79,6 +94,15 @@ export function ProjectPage() {
             >
               + Add project
             </button>
+            <div className="project-card__actions">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleGenerateSprintPDF}
+              >
+                Generate PDF
+              </button>
+            </div>
           </section>
         )}
 
@@ -117,6 +141,15 @@ export function ProjectPage() {
             >
               + Add row
             </button>
+            <div className="project-card__actions">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleGenerateTodayPDF}
+              >
+                Generate PDF
+              </button>
+            </div>
           </section>
         )}
       </main>

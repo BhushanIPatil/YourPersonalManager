@@ -17,10 +17,10 @@ export function Footer() {
           <div className="footer-links">
             <h4>Product</h4>
             <ul>
-              <li><Link to="/">Planner</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
-              <li><Link to="/travel">Travel Manager</Link></li>
               <li><Link to="/project">Project Planner</Link></li>
+              <li><Link to="/">Planner</Link></li>
+              <li><Link to="/travel">Travel Manager</Link></li>
             </ul>
           </div>
           <div className="footer-links">

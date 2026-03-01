@@ -113,7 +113,8 @@ body {
   flex-direction: column;
   margin-left: calc(var(--layout-margin) + var(--sidebar-width-expanded) + var(--layout-margin));
   transition: margin-left var(--sidebar-transition);
-  padding: var(--layout-margin) var(--layout-margin) 0 var(--layout-margin);
+  /* No top padding so header aligns with sidebar top (wrapper already has padding-top) */
+  padding: 0 var(--layout-margin) 0 var(--layout-margin);
 }
 
 .layout-wrapper--sidebar-collapsed .main-content {
@@ -1068,6 +1069,60 @@ select option {
 }
 
 /* ============================================
+   Dashboard — Application overview
+   ============================================ */
+.dashboard-overview__intro {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-24);
+  max-width: 640px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-20);
+}
+
+.dashboard-card {
+  display: block;
+  padding: var(--card-padding);
+  background: var(--bg-card);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.dashboard-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.08);
+}
+
+.dashboard-card__icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: var(--space-12);
+}
+
+.dashboard-card__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-12);
+}
+
+.dashboard-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
    Project Planner — Sprint & Today's work
    ============================================ */
 .project-tabs {
@@ -1112,6 +1167,12 @@ select option {
   font-size: 0.875rem;
   margin-bottom: var(--space-20);
   line-height: 1.5;
+}
+
+.project-card__actions {
+  margin-top: var(--space-24);
+  padding-top: var(--space-24);
+  border-top: var(--border-default);
 }
 
 .project-table-wrap {
