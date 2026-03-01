@@ -11,10 +11,10 @@ import {
 } from './SidebarIcons'
 
 const navItems = [
-  { path: '/', label: 'Planner', Icon: IconPlanner },
   { path: '/dashboard', label: 'Dashboard', Icon: IconDashboard },
-  { path: '/travel', label: 'Travel Manager', Icon: IconTravel },
   { path: '/project', label: 'Project Planner', Icon: IconProject },
+  { path: '/', label: 'Planner', Icon: IconPlanner },
+  { path: '/travel', label: 'Travel Manager', Icon: IconTravel },
   { path: '/about', label: 'About', Icon: IconAbout },
   { path: '/contact', label: 'Contact', Icon: IconContact },
 ]
