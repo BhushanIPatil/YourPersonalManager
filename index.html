@@ -8,186 +8,21 @@
   <meta name="keywords" content="daily planner, activity planner, day planner, PDF planner, schedule, productivity, plan your day">
   <meta name="author" content="Daily Activity Planner">
   <meta name="robots" content="index, follow">
-  <!-- Add canonical when deploying: <link rel="canonical" href="https://yourdomain.com/"> -->
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Daily Activity Planner">
   <meta property="og:description" content="Plan your day, export to PDF, or edit existing plans. Free and works in your browser.">
   <meta property="og:url" content="https://dailyplanner.example.com/">
   <meta property="og:locale" content="en_US">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Daily Activity Planner">
   <meta name="twitter:description" content="Plan your day, export to PDF, or edit existing plans. Free and works in your browser.">
-
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
-
-  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Daily Activity Planner",
-    "description": "Plan your day with activities, time slots, and notes. Export to PDF or upload and edit existing plans.",
-    "applicationCategory": "ProductivityApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  }
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Daily Activity Planner","description":"Plan your day with activities, time slots, and notes. Export to PDF or upload and edit existing plans.","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
-
-  <!-- jsPDF for PDF generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <!-- pdf.js for PDF text extraction -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
-  <div class="background-effects"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="index.html" class="navbar-brand" aria-label="Daily Activity Planner - Home">
-        <span class="brand-icon">📋</span>
-        <span class="brand-text">Daily Planner</span>
-      </a>
-      <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="navbar-menu">
-        <li><a href="index.html" class="nav-link active">Planner</a></li>
-        <li><a href="travel.html" class="nav-link">Travel Manager</a></li>
-        <li><a href="project.html" class="nav-link">Project Planner</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main class="container">
-    <header class="header">
-      <h1 class="title">Daily Activity Planner</h1>
-      <p class="subtitle">Plan your day, export to PDF, or edit existing plans</p>
-    </header>
-
-    <div class="two-column-layout">
-    <div class="left-column">
-    <section class="card planner-card">
-      <form id="planner-form" class="planner-form">
-        <div class="form-row">
-          <label for="plan-date">Date</label>
-          <input type="date" id="plan-date" name="plan-date" required>
-        </div>
-
-        <div class="form-row">
-          <label for="plan-title">Title</label>
-          <input type="text" id="plan-title" name="plan-title" placeholder="e.g. My Daily Plan" required>
-        </div>
-
-        <div class="activities-section">
-          <div class="section-header">
-            <h2>Activities</h2>
-          </div>
-
-          <div id="activities-container">
-            <!-- Activity rows will be inserted here by JS -->
-            <div class="activity-row" data-index="0">
-              <label class="activity-done-wrap">
-                <input type="checkbox" class="activity-done" name="activity-done-0" aria-label="Mark as completed">
-                <span class="checkmark"></span>
-              </label>
-              <input type="time" class="activity-time" name="activity-time-0" value="09:00">
-              <input type="text" class="activity-desc" name="activity-desc-0" placeholder="Activity description" required>
-              <textarea class="activity-notes" name="activity-notes-0" placeholder="Notes (optional)" rows="2"></textarea>
-              <button type="button" class="btn-remove" data-index="0" aria-label="Remove activity">&times;</button>
-            </div>
-          </div>
-
-          <button type="button" id="add-activity" class="btn btn-add" aria-label="Add activity">
-            <span>+ Add Activity</span>
-          </button>
-        </div>
-
-        <div class="actions">
-          <button type="submit" id="generate-pdf" class="btn btn-primary">
-            Generate & Download PDF
-          </button>
-        </div>
-      </form>
-    </section>
-
-    <section class="card upload-card">
-      <h2>Edit Existing Planner</h2>
-      <p class="upload-desc">Upload a planner PDF (generated by this app) to extract and edit its content.</p>
-      <div class="upload-zone" id="upload-zone">
-        <input type="file" id="pdf-input" accept=".pdf" hidden>
-        <div class="upload-content" id="upload-content">
-          <span class="upload-icon">📄</span>
-          <p>Drop your PDF here or <strong>click to browse</strong></p>
-        </div>
-      </div>
-      <p id="upload-status" class="upload-status" aria-live="polite"></p>
-    </section>
-    </div>
-
-    <aside class="right-column card preview-card">
-      <h2>Preview</h2>
-      <div id="planner-preview" class="planner-preview"></div>
-    </aside>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo">
-            <span class="brand-icon">📋</span>
-            <span>Daily Planner</span>
-          </a>
-          <p class="footer-tagline">Plan your day. Export to PDF. Stay productive.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="index.html">Planner</a></li>
-            <li><a href="travel.html">Travel Manager</a></li>
-            <li><a href="project.html">Project Planner</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> Daily Activity Planner. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script>
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
-    document.querySelector('.navbar-toggle').addEventListener('click', function() {
-      this.classList.toggle('open');
-      this.setAttribute('aria-expanded', this.classList.contains('open'));
-      document.querySelector('.navbar-menu').classList.toggle('open');
-    });
-  </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
