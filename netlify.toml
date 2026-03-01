@@ -1,7 +1,13 @@
-# Netlify config for static deployment
+# Netlify config for Vite + React
 [build]
-  publish = "."
-  command = ""
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 # Ensure proper MIME types for static assets
 [[headers]]
